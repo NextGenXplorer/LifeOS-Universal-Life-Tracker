@@ -1,0 +1,52 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.idea/
+.project
+.settings/
+.toolstarget/
+.vscode/
+
+# Flutter/Dart-specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Android-specific
+.gradle/
+local.properties
+ant.properties
+settings.job
+gen/
+bin/
+out/
+
+# iOS-specific
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+DerivedData/
+build/
+Index/
+Pods/
+.xcworkspace/
+
+# Web-specific
+.web/
+
+# Symbol files
+*.pdb
+*.orig
+*.rej
