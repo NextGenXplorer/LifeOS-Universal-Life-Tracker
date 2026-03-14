@@ -1,4 +1,5 @@
 class DatabaseConstants {
+  // Base
   static const String activitiesTable = 'activities';
   static const String habitsTable = 'habits';
   static const String tasksTable = 'tasks';
@@ -7,6 +8,33 @@ class DatabaseConstants {
   static const String templatesTable = 'templates';
   static const String habitLogsTable = 'habit_logs';
   static const String taskTagsTable = 'task_tags';
+  static const String settingsTable = 'settings';
+  static const String habitCompletionsTable = 'habit_completions';
+  static const String expenseCategoriesTable = 'expense_categories';
+  static const String milestonesTable = 'milestones';
+  static const String scheduleTable = 'schedule';
+  static const String activityLogsTable = 'activity_logs';
+
+  // Gamification
+  static const String userStatsTable = 'user_stats';
+  static const String skillTreesTable = 'skill_trees';
+  static const String userSkillsTable = 'user_skills';
+  static const String achievementsTable = 'achievements';
+  static const String userAchievementsTable = 'user_achievements';
+  static const String dailyQuestsTable = 'daily_quests';
+  static const String userQuestsTable = 'user_quests';
+
+  // Automation
+  static const String automationRulesTable = 'automation_rules';
+  static const String automationLogsTable = 'automation_logs';
+
+  // AI Insights
+  static const String aiInsightsTable = 'ai_insights';
+  static const String patternLogsTable = 'pattern_logs';
+
+  // Database Info
+  static const String databaseName = 'lifeos.db';
+  static const int databaseVersion = 2;
 
   static const String id = 'id';
   static const String title = 'title';
