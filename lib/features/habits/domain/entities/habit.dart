@@ -28,4 +28,61 @@ class Habit {
     required this.createdAt,
     required this.updatedAt,
   });
+
+  Habit copyWith({
+    String? id,
+    String? title,
+    String? description,
+    IconData? icon,
+    Color? color,
+    HabitFrequency? frequency,
+    int? targetCount,
+    TimeOfDay? reminderTime,
+    bool? isActive,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) {
+    return Habit(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      icon: icon ?? this.icon,
+      color: color ?? this.color,
+      frequency: frequency ?? this.frequency,
+      targetCount: targetCount ?? this.targetCount,
+      reminderTime: reminderTime ?? this.reminderTime,
+      isActive: isActive ?? this.isActive,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
+
+  factory Habit.fromMap(Map<String, dynamic> map) {
+    return Habit(
+      id: map['id'] as String,
+      title: map['title'] as String,
+      description: map['description'] as String?,
+      frequency: HabitFrequency.values.firstWhere(
+        (e) => e.name == map['frequency'],
+        orElse: () => HabitFrequency.daily,
+      ),
+      targetCount: map['target_count'] as int? ?? 1,
+      isActive: (map['is_active'] as int?) == 1,
+      createdAt: DateTime.parse(map['created_at'] as String),
+      updatedAt: DateTime.parse(map['updated_at'] as String),
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'title': title,
+      'description': description,
+      'frequency': frequency.name,
+      'target_count': targetCount,
+      'is_active': isActive ? 1 : 0,
+      'created_at': createdAt.toIso8601String(),
+      'updated_at': updatedAt.toIso8601String(),
+    };
+  }
 }
